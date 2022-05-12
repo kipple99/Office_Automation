@@ -25,7 +25,7 @@ for page in range(1, 51): # 1 ~ 50 page까지 크롤링
             if '사건담당변호사' in str(soup.select('p')[-1]):
                 
                 case_division = ''
-                case_keyword = re.sub('<span>|</span>|<span class="category">', '', str(soup.select('span')[11]) + ' ' + str(soup.select('span')[12])).strip()
+                case_keyword = re.sub('<span>|</span>|<span class="category">', '', str(soup.select('span')[11]) + ' ' + str(soup.select('span')[12])).strip() # re.sub메소드 - 치환 메소드
                 case_victory_point = re.sub('<p>|</p>|\n', '', str(soup.select('p')[3])).strip()
                 case_overview = re.sub('<p>|</p>|\n', '', str(soup.select('p')[1])).strip()
                 case_lawyer = re.sub('<span>|</span>|<span class="name">', '', str(soup.select('span.name')[0])+ ' ' + str(soup.select('span.name')[1])).strip()
