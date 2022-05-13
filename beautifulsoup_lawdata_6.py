@@ -21,6 +21,8 @@ for page in range(212, 250): # 212 ~ 249 page까지 크롤링 250부터 변호�
             rating_page = response.text
             soup = BeautifulSoup(rating_page, 'html.parser')
             #soup.select('span')[11]
+            test = str(soup.select('p')[-1])
+            print(test)
 
             if '사건담당변호사' in str(soup.select('p')[-1]):
                 
