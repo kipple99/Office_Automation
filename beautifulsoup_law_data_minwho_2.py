@@ -16,7 +16,7 @@ ws.append(['사건구분', '키워드/결과', '승소 요지/사건 개요', '�
 
 for case_num in range(7, 420): # uid 7 ~ 419까지 크롤링
     try:
-        url = 'https://www.minwho.kr/case/major_case.html?bmain=view&uid={}'.format(case_num)
+        url = 'https://www.minwho.kr/case/major_case.html?bmain=view&uid=380'.format(case_num)
         response = requests.get(url)
         rating_page = response.text
         soup = BeautifulSoup(rating_page, 'html.parser')            
@@ -28,7 +28,7 @@ for case_num in range(7, 420): # uid 7 ~ 419까지 크롤링
         # test = soup.select_one('p.bar_span').get_text().strip()
         # test_1 = test.splitlines() # 줄바꿈 기호 기준으로 쪼개기
         # print(test_1[1])
-        # print(test_keyword)
+        print(test_keyword)
         
         if  '승소' in test_keyword: # 제목에 '승소'가 들어간 것만 크롤링
             case_tag = soup.select_one('p.bar_span').get_text().strip()
