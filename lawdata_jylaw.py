@@ -62,7 +62,7 @@ for case_num in range(1380, 1814): # range(1380, 1814)
         print('.')
         
         
-wb.save('jy_lawdata.xlsx')
+wb.save('jy_lawdata_담당변호사.xlsx')
 
 # case_division 사건 구분
 # case_keyword 키워드
